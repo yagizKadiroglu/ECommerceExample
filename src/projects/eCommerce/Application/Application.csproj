@@ -20,7 +20,10 @@
 
   <ItemGroup>
     <Folder Include="Features\Categories\Rules\" />
+    <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\Products\Rules\" />
+    <Folder Include="Features\UserOperationClaims\Rules\" />
+    <Folder Include="Features\Users\Rules\" />
   </ItemGroup>
 
 </Project>
