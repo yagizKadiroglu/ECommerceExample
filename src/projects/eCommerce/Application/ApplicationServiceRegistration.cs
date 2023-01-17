@@ -1,4 +1,5 @@
 ﻿using Application.Services.Auth;
+using Application.Services.File;
 using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
@@ -26,6 +27,7 @@ namespace Application
 
 
             services.AddScoped<IAuthService, AuthManager>();
+            services.AddScoped<IFileService, FileService>();
 
             return services;
         }
