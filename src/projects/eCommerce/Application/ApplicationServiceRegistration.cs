@@ -1,4 +1,6 @@
-﻿using Core.Application.Pipelines.Validation;
+﻿using Application.Services.Auth;
+using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +22,10 @@ namespace Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
 
+
+            services.AddScoped<IAuthService, AuthManager>();
 
             return services;
         }
